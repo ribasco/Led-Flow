@@ -1,2 +1,2 @@
-# Yet another led library
+# Non-blocking LED Library for Arduino
 
