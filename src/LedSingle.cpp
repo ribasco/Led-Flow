@@ -18,12 +18,4 @@ uint32_t LedSingle::getValue(void) {
 LedPin& LedSingle::getPin(void) {
 	return *_pin;
 }
-
-/*void LedSingle::update(const uint32_t& now) {
-	//Continue updating pin state
-	if (_pin != NULL && (_pin->getPin() > -1 && _pin->isActive())) {
-		updatePinState(_pin, now);
-		writePinState(_pin);
-	}
-}*/
 } // namespace LedLib

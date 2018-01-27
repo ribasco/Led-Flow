@@ -2,7 +2,7 @@
  * LedActivityManager.cpp
  *
  *  Created on: 25 Jan 2018
- *      Author: root
+ *      Author: Rafael Ibasco
  */
 
 #include "Led.h"

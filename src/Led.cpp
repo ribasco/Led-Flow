@@ -31,11 +31,19 @@ LedPinConfig LED_CONFIG_DELAY = { 0, //start value
 		false //override value
 		};
 
-LedPinConfig LED_CONFIG_FADE_IN = { 0, LedStepDirection::STEP_UP, 0, 0,
-LED_PWM_MIN,
-LED_PWM_MAX,
-false,
-true, 50, 5, 1, false };
+LedPinConfig LED_CONFIG_FADE_IN = { 0, //start value
+		LedStepDirection::STEP_UP, //start direction
+		0,  //step up offset
+		0, //step down offset
+		LED_PWM_MIN, //min value
+		LED_PWM_MAX, //max value
+		false, //oscillate
+		true, //smooth
+		50,  //interval
+		5, //repeat
+		1, //cycles per iteration
+		false //override value
+		};
 
 LedPinConfig LED_CONFIG_FADE_OUT = { 255, //value
 		LedStepDirection::STEP_DOWN, //direction
@@ -247,14 +255,14 @@ void Led::onPinEvent(LedPin& pin, LedActivityEvent& event) {
 			return;
 
 		/*Serial.print(millis());
-		Serial.print(" :: ");
-		Serial.print("[PIN EVENT]: Pin = ");
-		Serial.print(pin.getPin());
-		Serial.print(", Activity = ");
-		Serial.print(_activityManager.currentIndex(pin));
-		Serial.print(", Interval = ");
-		Serial.print(cfg->interval);
-		Serial.println(", Event = STARTED");*/
+		 Serial.print(" :: ");
+		 Serial.print("[PIN EVENT]: Pin = ");
+		 Serial.print(pin.getPin());
+		 Serial.print(", Activity = ");
+		 Serial.print(_activityManager.currentIndex(pin));
+		 Serial.print(", Interval = ");
+		 Serial.print(cfg->interval);
+		 Serial.println(", Event = STARTED");*/
 
 		//Workaround for the timing issue in the delay
 		if (!cfg->override)
@@ -266,14 +274,14 @@ void Led::onPinEvent(LedPin& pin, LedActivityEvent& event) {
 			|| event == LedActivityEvent::ABORTED) {
 
 		/*Serial.print(millis());
-		Serial.print(" :: ");
-		Serial.print("[PIN EVENT]: Pin = ");
-		Serial.print(pin.getPin());
-		Serial.print(", Activity = ");
-		Serial.print(_activityManager.currentIndex(pin));
-		Serial.print(", Interval = ");
-		Serial.print(_activityManager.current(pin)->interval);
-		Serial.println(", Event = COMPLETED");*/
+		 Serial.print(" :: ");
+		 Serial.print("[PIN EVENT]: Pin = ");
+		 Serial.print(pin.getPin());
+		 Serial.print(", Activity = ");
+		 Serial.print(_activityManager.currentIndex(pin));
+		 Serial.print(", Interval = ");
+		 Serial.print(_activityManager.current(pin)->interval);
+		 Serial.println(", Event = COMPLETED");*/
 
 		if (_activityManager.hasNext(pin)) {
 			pin.setConfig(_activityManager.next(pin));
@@ -331,8 +339,6 @@ void Led::updatePinState(LedPin* pin, const uint32_t& now) {
 
 	if (pin->getStepDirection() == LedStepDirection::STEP_NONE
 			&& pin->isActive()) {
-		/*Serial.print("Done: ");
-		Serial.println(_activityManager.currentIndex(*pin));*/
 		pin->complete();
 		return;
 	}
