@@ -53,27 +53,6 @@ class LedSingle;
 class LedRgb;
 
 /**
- * Class which a color based on the three
- * standard R (Red) G (Green) B (Blue) properties
- *
- * @author Rafael Ibasco
- */
-class Color {
-public:
-	Color() :
-			Color(0, 0, 0) {
-	}
-	;
-	Color(uint8_t r, uint8_t g, uint8_t b) :
-			red(r), green(g), blue(b) {
-	}
-	;
-	uint8_t red;
-	uint8_t green;
-	uint8_t blue;
-};
-
-/**
  * An enum containing the Step Directions for an Led Pin
  *
  * @author Rafael Ibasco
