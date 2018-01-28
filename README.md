@@ -1,4 +1,4 @@
-![](/home/raffy/projects/led/resources/logo.png) 
+![](resources/logo.png) 
 
 # Introduction
 
