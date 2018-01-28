@@ -1,0 +1,29 @@
+{
+	"name": "Led Flow",
+	"keywords": "led, rgb, arduino, flow, non-blocking",
+	"description": "A non-blocking led library which allows you to define a set of led activities and re-use them later for playback",
+	"repository": 
+	{
+		"type": "git",
+		"url": "https://github.com/ribasco/Led-Flow"
+	},
+
+	"authors": 
+	[
+		{
+			"name": "Rafael Ibasco",
+			"email": "raffy@ibasco.com",
+			"url": "https://github.com/ribasco",
+			"maintainer": true
+		}
+	],
+
+	"dependencies": 
+	{
+		
+	},
+
+	"version": "1.0.0",
+	"frameworks": "arduino",
+	"platforms": "*"
+}
