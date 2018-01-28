@@ -1,4 +1,4 @@
-#![ ](resources/logo.png  "Yet another led library")
+![ ](resources/logo.png  "Yet another led library")
 
 # Introduction
 
