@@ -12,7 +12,7 @@ If you need to control a series of led activities/patterns in a non-blocking fas
 
 # Installation
 
-####Arduino
+#### Arduino
 
 1. Browse to the arduino library/sketchbook location
 2. Navigate to the libraries folder
