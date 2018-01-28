@@ -42,7 +42,7 @@ or simply via the Arduino Menu
 	
 # Usage
 
-####Basic Usage
+#### Basic Usage
 
 Please note that using the setValue* methods are the same as calling analogWrite(value).
 
@@ -94,6 +94,6 @@ void loop() {
 }
 ```
 
-####Advanced Usage
+#### Advanced Usage
 
 under construction
