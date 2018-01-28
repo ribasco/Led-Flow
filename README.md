@@ -4,7 +4,7 @@
 
 If you need to control a series of led activities/patterns in a non-blocking fashion then this library is for you. 
 
-#Features
+# Features
 - Define a chain of led activity configurations that you can assign, reuse and playback for any led instance.
 - Gives you more flexibility in controlling the light patterns for complex activities
 - Fluent API Interface
