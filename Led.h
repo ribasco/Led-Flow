@@ -75,8 +75,7 @@ struct LedPinConfig {
 	uint32_t interval;
 	uint16_t repeat;
 	uint8_t cyclesPerIteration;bool override;
-	uint32_t color;
-	bool equals(const LedPinConfig& rhs) {
+	uint32_t color;bool equals(const LedPinConfig& rhs) {
 		return startValue == rhs.startValue
 				&& startDirection == rhs.startDirection
 				&& stepUpOffset == rhs.stepUpOffset
@@ -85,8 +84,7 @@ struct LedPinConfig {
 				&& smooth == rhs.smooth && interval == rhs.interval
 				&& repeat == rhs.repeat
 				&& cyclesPerIteration == rhs.cyclesPerIteration
-				&& override == rhs.override
-				&& color == rhs.color;
+				&& override == rhs.override && color == rhs.color;
 	}
 
 	bool operator ==(const LedPinConfig& rhs) {
@@ -298,9 +296,12 @@ public:
 	LedActivity& on(uint8_t brightnessPct, uint32_t color);
 	LedActivity& off(void);
 	LedActivity& blink(bool smooth, uint16_t repeat, uint32_t interval);
-	LedActivity& blink(bool smooth, uint16_t repeat, uint32_t interval, uint32_t color);
-	LedActivity& fade(uint32_t from, uint32_t to, uint16_t repeat, uint32_t interval);
-	LedActivity& fade(uint32_t from, uint32_t to, uint16_t repeat, uint32_t interval, uint32_t color);
+	LedActivity& blink(bool smooth, uint16_t repeat, uint32_t interval,
+			uint32_t color);
+	LedActivity& fade(uint32_t from, uint32_t to, uint16_t repeat,
+			uint32_t interval);
+	LedActivity& fade(uint32_t from, uint32_t to, uint16_t repeat,
+			uint32_t interval, uint32_t color);
 	LedActivity& custom(LedPinConfig& config);
 protected:
 	Led* _led;
@@ -392,6 +393,9 @@ public:
 
 	virtual void start(LedActivity& activity);
 	virtual void stop(void);
+	virtual void update() {
+		update(millis());
+	}
 	virtual void update(const uint32_t& now);
 
 	void setPinConfig(LedPin* pin, LedPinConfig& config);
@@ -427,7 +431,8 @@ protected:
 
 	virtual void onPinEvent(LedPin& pin, LedActivityEvent& event);
 
-	virtual bool preProcessPin(LedPin& pin, LedPinConfig* config, LedActivityEvent& event) {
+	virtual bool preProcessPin(LedPin& pin, LedPinConfig* config,
+			LedActivityEvent& event) {
 		pin.setConfig(config);
 		return true;
 	}
@@ -449,8 +454,6 @@ public:
 	LedPin& getPin(void);
 	void setValue(uint32_t value); //override base
 	uint32_t getValue(void); //override base
-	//void update(const uint32_t& now); //override base
-	//void onPinEvent(LedPin& pin, LedActivityEvent& event); //override base
 private:
 	LedPin* _pin;
 };
@@ -482,13 +485,9 @@ public:
 	LedPin& getRedPin(void);
 	LedPin& getGreenPin(void);
 	LedPin& getBluePin(void);
-
-	//@Override
-	//void update(const uint32_t& now);
-
-	//void onPinEvent(LedPin& pin, LedActivityEvent& event); //override base
 protected:
-	bool preProcessPin(LedPin& pin, LedPinConfig* config, LedActivityEvent& event);
+	bool preProcessPin(LedPin& pin, LedPinConfig* config,
+			LedActivityEvent& event);
 private:
 	LedPin* _redPin;
 	LedPin* _greenPin;
