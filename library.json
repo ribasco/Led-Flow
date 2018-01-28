@@ -5,24 +5,23 @@
 	"repository": 
 	{
 		"type": "git",
-		"url": "https://github.com/ribasco/Led-Flow"
+		"url": "https://github.com/ribasco/Led-Flow.git"
 	},
 
 	"authors": 
-	[
-		{
-			"name": "Rafael Ibasco",
-			"email": "raffy@ibasco.com",
-			"url": "https://github.com/ribasco",
-			"maintainer": true
-		}
-	],
+	{
+		"name": "Rafael Ibasco",
+		"email": "raffy@ibasco.com",
+		"url": "https://github.com/ribasco",
+		"maintainer": true
+	},
 
 	"dependencies": 
 	{
 		
 	},
 
+	"license": "MIT",
 	"version": "1.0.0",
 	"frameworks": "arduino",
 	"platforms": "*"
