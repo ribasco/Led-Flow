@@ -502,6 +502,7 @@ public:
 	int8_t add(Led& led);
 	int8_t remove(Led& led);
 	int8_t count(void);
+	void setValue(uint32_t value);
 	void setUpdateInterval(uint32_t interval);
 	void update(void);
 private:
