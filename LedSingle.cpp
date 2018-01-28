@@ -1,6 +1,6 @@
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
 LedSingle::LedSingle(int8_t pin) :
 		Led() {
 	_pin = createPin(IDX_LED, pin);

@@ -5,9 +5,9 @@
  *      Author: Rafael Ibasco
  */
 
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
 
 void LedActivityManager::setActivity(LedActivity* activity) {
 	_activity = activity;

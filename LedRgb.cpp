@@ -1,6 +1,6 @@
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
 LedRgb::LedRgb(int8_t redPin, int8_t greenPin, int8_t bluePin) : Led() {
 	_redPin = createPin(IDX_LED_RED, redPin);
 	_greenPin = createPin(IDX_LED_GREEN, greenPin);

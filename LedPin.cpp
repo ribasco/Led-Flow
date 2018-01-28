@@ -1,6 +1,6 @@
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
 
 uint8_t LedPin::index(void) {
 	return _index;

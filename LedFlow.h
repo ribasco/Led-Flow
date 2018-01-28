@@ -1,14 +1,14 @@
-#ifndef LED_H_
-#define LED_H_
+#ifndef LEDFLOW_H_
+#define LEDFLOW_H_
+
+namespace LedFlow {
 
 #include <Arduino.h>
 #include <inttypes.h>
 #include <stdio.h>
 #include <math.h>
 
-#define	QUEUE_MODE	              FIFO
-
-#define LED_DEBUG_ENABLED         true
+#define LED_DEBUG_ENABLED         false
 #define LED_PWM_MIN               0
 #define LED_PWM_MAX               255
 
@@ -44,13 +44,21 @@
 #define B_BYTE(value) ((value >> 8) & 0xFF)
 #define W_BYTE(value) (value & 0xFF)
 
-namespace LedLib {
-
 //Forward declarations
 class Led;
 class LedPin;
 class LedSingle;
 class LedRgb;
+struct LedPinConfig;
+
+extern LedPinConfig LED_CONFIG_DEFAULT;
+extern LedPinConfig LED_CONFIG_DELAY;
+extern LedPinConfig LED_CONFIG_FADE_IN;
+extern LedPinConfig LED_CONFIG_FADE_OUT;
+extern LedPinConfig LED_CONFIG_ON;
+extern LedPinConfig LED_CONFIG_OFF;
+extern LedPinConfig LED_CONFIG_BLINK;
+extern LedPinConfig LED_CONFIG_BLINK_SMOOTH;
 
 /**
  * An enum containing the Step Directions for an Led Pin
@@ -64,6 +72,9 @@ enum LedStepDirection {
 enum LedActivityEvent {
 	STARTED, COMPLETED, ABORTED, CONFIG_CHANGED, INVALIDATED
 };
+
+//Callback definitions
+typedef void (*LedPinActivityListener)(LedPin&, LedActivityEvent);
 
 struct LedPinConfig {
 	uint8_t startValue;
@@ -95,18 +106,6 @@ struct LedPinConfig {
 		return !equals(rhs);
 	}
 };
-
-//Callback definitions
-typedef void (*LedPinActivityListener)(LedPin&, LedActivityEvent);
-
-extern LedPinConfig LED_CONFIG_DEFAULT;
-extern LedPinConfig LED_CONFIG_DELAY;
-extern LedPinConfig LED_CONFIG_FADE_IN;
-extern LedPinConfig LED_CONFIG_FADE_OUT;
-extern LedPinConfig LED_CONFIG_ON;
-extern LedPinConfig LED_CONFIG_OFF;
-extern LedPinConfig LED_CONFIG_BLINK;
-extern LedPinConfig LED_CONFIG_BLINK_SMOOTH;
 
 /**
  * Contains all the state data associated with an LED Pin

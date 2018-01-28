@@ -1,6 +1,6 @@
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
 LedActivity& LedActivity::repeat(uint16_t repeat) {
 	_repeat = repeat;
 	return *this;

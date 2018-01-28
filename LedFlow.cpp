@@ -1,6 +1,6 @@
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
 
 LedPinConfig LED_CONFIG_DEFAULT = {
 LED_DEFAULT_VALUE, //start value
@@ -166,7 +166,7 @@ uint8_t Led::getValue(LedPin* pin) {
 	return pin->getValue();
 }
 
-void Led::writePinState(LedLib::LedPin *pin) {
+void Led::writePinState(LedFlow::LedPin *pin) {
 	if (pin == NULL) {
 		Serial.println("Pin or Pin Config is NULL");
 		return;

@@ -1,6 +1,6 @@
-#include "Led.h"
+#include "LedFlow.h"
 
-namespace LedLib {
+namespace LedFlow {
   void LedManager::setUpdateInterval(uint32_t interval) {
     _interval = interval;
   }
