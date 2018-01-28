@@ -1,4 +1,4 @@
-![ ](resources/logo.png  "Yet another led library")
+![](/home/raffy/projects/led/resources/logo.png) 
 
 # Introduction
 
