@@ -1,8 +1,5 @@
 #include <LedFlow.h>
 
-//Dont forget to declare this on your sketch!
-using namespace LedFlow;
-
 #define PIN_LED           6
 #define PIN_LED_STATUS_R  2
 #define PIN_LED_STATUS_G  3

@@ -1,6 +1,5 @@
 #include "LedFlow.h"
 
-namespace LedFlow {
 void LedManager::setUpdateInterval(uint32_t interval) {
 	_interval = interval;
 }
@@ -74,4 +73,3 @@ int8_t LedManager::count(void) {
 	}
 	return ctr;
 }
-} //namespace

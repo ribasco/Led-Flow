@@ -1,7 +1,5 @@
 #include "LedFlow.h"
 
-namespace LedFlow {
-
 uint8_t LedPin::index(void) {
 	return _index;
 }
@@ -103,4 +101,3 @@ void LedPin::setLed(Led* led) {
 Led* LedPin::getLed(void) {
 	return _led;
 }
-} //namespace

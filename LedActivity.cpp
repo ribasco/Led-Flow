@@ -1,6 +1,5 @@
 #include "LedFlow.h"
 
-namespace LedFlow {
 LedActivity& LedActivity::repeat(uint16_t repeat) {
 	_repeat = repeat;
 	return *this;
@@ -108,4 +107,3 @@ LedPinConfig* LedActivity::step(int8_t index) {
 	}
 	return &_steps[index];
 }
-} // namespace LedLib

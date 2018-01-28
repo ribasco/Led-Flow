@@ -7,8 +7,6 @@
 
 #include "LedFlow.h"
 
-namespace LedFlow {
-
 void LedActivityManager::setActivity(LedActivity* activity) {
 	_activity = activity;
 	reset();
@@ -79,5 +77,4 @@ void LedActivityManager::repeatSet(LedPin& pin, uint16_t value) {
 	if (!isValidPin(pin))
 		return;
 	_repeatCtr[pin.index()] = value;
-}
 }

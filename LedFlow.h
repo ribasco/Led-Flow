@@ -1,8 +1,6 @@
 #ifndef LEDFLOW_H_
 #define LEDFLOW_H_
 
-namespace LedFlow {
-
 #include <Arduino.h>
 #include <inttypes.h>
 #include <stdio.h>
@@ -513,6 +511,5 @@ private:
 	int findFreeIndex(void);
 	void updateAllLeds(const uint32_t& now);
 };
-} //end of namespace
 
 #endif

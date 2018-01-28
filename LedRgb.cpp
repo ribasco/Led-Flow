@@ -1,6 +1,5 @@
 #include "LedFlow.h"
 
-namespace LedFlow {
 LedRgb::LedRgb(int8_t redPin, int8_t greenPin, int8_t bluePin) : Led() {
 	_redPin = createPin(IDX_LED_RED, redPin);
 	_greenPin = createPin(IDX_LED_GREEN, greenPin);
@@ -80,4 +79,3 @@ bool LedRgb::preProcessPin(LedPin& pin, LedPinConfig* config,
 
 	return true;
 }
-} //namespace

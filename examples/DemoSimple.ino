@@ -1,7 +1,5 @@
 #include <LedFlow.h>
 
-using namespace LedFlow;
-
 #define PIN_LED_STATUS_R  2
 #define PIN_LED_STATUS_G  3
 #define PIN_LED_STATUS_B  4

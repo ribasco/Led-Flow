@@ -1,7 +1,5 @@
 #include "LedFlow.h"
 
-namespace LedFlow {
-
 LedPinConfig LED_CONFIG_DEFAULT = {
 LED_DEFAULT_VALUE, //start value
 		LED_DEFAULT_STEPDIR, //start direction
@@ -166,7 +164,7 @@ uint8_t Led::getValue(LedPin* pin) {
 	return pin->getValue();
 }
 
-void Led::writePinState(LedFlow::LedPin *pin) {
+void Led::writePinState(LedPin *pin) {
 	if (pin == NULL) {
 		Serial.println("Pin or Pin Config is NULL");
 		return;
@@ -422,4 +420,3 @@ void Led::updatePinState(LedPin* pin, const uint32_t& now) {
 	} //if !LedStepDirection::STEP_NONE
 
 }
-} //namespace LedLib

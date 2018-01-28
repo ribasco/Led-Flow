@@ -1,6 +1,5 @@
 #include "LedFlow.h"
 
-namespace LedFlow {
 LedSingle::LedSingle(int8_t pin) :
 		Led() {
 	_pin = createPin(IDX_LED, pin);
@@ -18,4 +17,3 @@ uint32_t LedSingle::getValue(void) {
 LedPin& LedSingle::getPin(void) {
 	return *_pin;
 }
-} // namespace LedLib
