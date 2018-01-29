@@ -23,7 +23,7 @@ If you need to control a series of led activities/patterns in a non-blocking fas
 4. Restart the Arduino IDE (If open)
 5. In your sketch, include the library by typing
 
-```
+```c++
 #include <LedFlow.h>
 
 void setup() {
@@ -48,7 +48,7 @@ Please note that using the setValue* methods are the same as calling analogWrite
 
 1. Turning on/off a Standard LED
 
-```
+```c++
 #include <LedFlow.h>
 
 #define PIN_LED           6
@@ -69,7 +69,7 @@ void loop() {
 
 2. Turning on/off an RGB LED
 
-```
+```c++
 #include <LedFlow.h>
 
 #define PIN_LED_R 	2
