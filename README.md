@@ -79,10 +79,11 @@ void loop() {
 LedRgb ledRgb = LedRgb(PIN_LED_R, PIN_LED_G, PIN_LED_B); 
 
 void setup() {
-        //Only turn on color red to it's maximum brightness
+        //Set the value of all pins
 	ledRgb.setValue(RGB(255, 0, 0));
 	 
-	//The following code below individually sets the color value of each RGB Pin. Using this method will not override the values of the other pins. 
+	//The following code below individually sets the color value of each RGB Pin. 
+	// Using this method will not override the values of the other pins. 
 	//ledRgb.setValueRed(0);
 	//ledRgb.setValueGreen(255);
 	//ledRgb.setValueBlue(255);
@@ -96,4 +97,4 @@ void loop() {
 
 #### Advanced Usage
 
-under construction...
+
