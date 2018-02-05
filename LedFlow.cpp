@@ -166,7 +166,7 @@ uint8_t Led::getValue(LedPin* pin) {
 
 void Led::writePinState(LedPin *pin) {
 	if (pin == NULL) {
-		Serial.println("Pin or Pin Config is NULL");
+		//Serial.println("Pin or Pin Config is NULL");
 		return;
 	}
 
@@ -178,8 +178,7 @@ void Led::writePinState(LedPin *pin) {
 
 	if (pin->isInvalidated()) {
 		//Make sure we respect the min/max limits
-		analogWrite(pin->getPin(),
-				constrain(pin->getValue(), cfg->min, cfg->max));
+		analogWrite(pin->getPin(), constrain(pin->getValue(), cfg->min, cfg->max));
 	}
 }
 
@@ -268,8 +267,7 @@ void Led::onPinEvent(LedPin& pin, LedActivityEvent& event) {
 
 		if (!preProcessPin(pin, cfg, event))
 			pin.setConfig(cfg);
-	} else if (event == LedActivityEvent::COMPLETED
-			|| event == LedActivityEvent::ABORTED) {
+	} else if (event == LedActivityEvent::COMPLETED) {
 
 		/*Serial.print(millis());
 		 Serial.print(" :: ");
@@ -304,6 +302,8 @@ void Led::onPinEvent(LedPin& pin, LedActivityEvent& event) {
 				}
 			}
 		}
+	} else if (event == LedActivityEvent::ABORTED) {
+	    pin.setConfig(&LED_CONFIG_DEFAULT);
 	}
 }
 
